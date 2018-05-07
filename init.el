@@ -28,6 +28,9 @@
   :init
   (evil-mode))
 
+(add-to-list 'default-frame-alist '(font . "Fira Mono-12"))
+(set-face-attribute 'default t :font "Fira Mono-12")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
