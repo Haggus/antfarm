@@ -13,6 +13,11 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(use-package zenburn-theme
+  :ensure t
+  :init
+  (load-theme 'zenburn t))
+
 (use-package which-key
   :ensure t
   :init
@@ -28,7 +33,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (evil which-key use-package))))
+ '(package-selected-packages
+   (quote
+    (zenburn-theme evil which-key use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
