@@ -30,6 +30,13 @@
   :init
   (which-key-mode))
 
+(use-package helm
+  :ensure t
+  :bind (("M-x" . helm-M-x)
+	 :map helm-map
+	 ("C-j" . helm-next-line)
+	 ("C-k" . helm-previous-line)))
+
 (use-package evil
   :ensure t
   :init
