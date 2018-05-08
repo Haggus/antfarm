@@ -76,7 +76,6 @@
   :defer t
   :bind ("C-x g" . magit-status)
   :init
-  (setq magit-diff-refine-hunk 'all)
   ;; Use evil keybindings within magit
   (use-package evil-magit
     :ensure t))
