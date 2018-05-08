@@ -21,10 +21,10 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(use-package zenburn-theme
+(use-package gruvbox-theme
   :ensure t
   :init
-  (load-theme 'zenburn t))
+  (load-theme 'gruvbox-dark-soft t))
 
 (use-package which-key
   :ensure t
