@@ -33,10 +33,37 @@
 
 (use-package helm
   :ensure t
-  :bind (("M-x" . helm-M-x)
+  :diminish helm-mode
+  :config
+
+  (require 'helm)
+  (require 'helm-files)
+  (require 'helm-config)
+
+  (bind-key "<tab>" 'helm-execute-persistent-action helm-map)
+  (bind-key [escape] 'helm-keyboard-quit helm-map)
+
+  (helm-mode 1)
+
+  (defun hide-cursor-in-helm-buffer ()
+    "Hide cursor in helm buffers"
+    (with-helm-buffer
+      (setq cursor-in-non-selected-windows nil)))
+
+  (add-hook 'helm-after-initialize-hook 'hide-cursor-in-helm-buffer)
+
+  :bind (("C-x b" . helm-mini)
+	 ("C-x C-f" . helm-find-files)
+	 ("M-x" . helm-M-x)
 	 :map helm-map
 	 ("C-j" . helm-next-line)
-	 ("C-k" . helm-previous-line)))
+	 ("C-k" . helm-previous-line)
+	 :map helm-find-files-map
+	 ("C-l" . helm-execute-persistent-action)
+	 ("C-h" . helm-find-files-up-one-level)
+	 :map helm-read-file-map
+	 ("C-l" . helm-execute-persistent-action)
+	 ("C-h" . helm-find-files-up-one-level)))
 
 (use-package evil
   :ensure t
