@@ -68,4 +68,5 @@
 (use-package evil
   :ensure t
   :init
-  (evil-mode))
+  (setq evil-want-C-u-scroll t)
+  (evil-mode t))
